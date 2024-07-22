@@ -9,7 +9,7 @@ LIBPISP_SITE = $(call github,raspberrypi,libpisp,$(LIBPISP_VERSION))
 LIBPISP_LICENSE = BSD-2-Clause
 LIBPISP_LICENSE_FILES = LICENSE
 LIBPISP_INSTALL_STAGING = YES
-LIBPISP_DEPENDENCIES = host-pkgconf host-meson
+LIBPISP_DEPENDENCIES = host-pkgconf host-meson nlohmann_json
 
 # Add meson options
 LIBPISP_CONF_OPTS = -Dlogging=enabled
