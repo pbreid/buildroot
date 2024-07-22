@@ -1,3 +1,4 @@
+sha256  71a9a4054939c4c3f56fdccfaa295888678d23a8c3b06c18ae7b3bdc3624e79f  linux-c1432b4bae5b6582f4d32ba381459f33c34d1424.tar.gz
 # From https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
 sha256  f048267b7b88316c9ca708c68d15a9ae802dcfc943c3188c1273eb958c433281  linux-6.9.8.tar.xz
 sha256  f3976e77708694fe4a1f8d1307c315c8a36cbc58f038a38e006b91e29a1f3214  linux-6.6.37.tar.xz
