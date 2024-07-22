@@ -1,0 +1,11 @@
+--- a/src/ipa/rpi/controller/rpi/hdr.cpp	2024-06-17 09:44:40.000000000 +0000
++++ b/src/ipa/rpi/controller/rpi/hdr.cpp	2024-07-22 06:32:07.885786822 +0000
+@@ -116,7 +116,7 @@
+ 	/* Make an "HDR off" mode by default so that tuning files don't have to. */
+ 	HdrConfig &offMode = config_["Off"];
+ 	offMode.name = "Off";
+-	offMode.cadence = { 0 };
++	std::fill(std::begin(offMode.cadence), std::end(offMode.cadence), 0);
+ 	offMode.channelMap[0] = "None";
+ 	status_.mode = offMode.name;
+ 	delayedStatus_.mode = offMode.name;

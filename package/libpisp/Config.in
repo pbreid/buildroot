@@ -1,0 +1,19 @@
+config BR2_PACKAGE_LIBPISP
+	bool "libpisp"
+	depends on BR2_TOOLCHAIN_HAS_THREADS
+	select BR2_PACKAGE_HOST_MESON
+	help
+	  libpisp is a helper library to generate run-time configuration
+	  for the Raspberry Pi ISP (PiSP), consisting of the Frontend
+	  and Backend hardware components.
+
+	  https://github.com/raspberrypi/libpisp
+
+if BR2_PACKAGE_LIBPISP
+
+config BR2_PACKAGE_LIBPISP_DISABLE_LOGGING
+	bool "Disable Boost logging"
+	help
+	  Disable the Boost logging library in libpisp.
+
+endif

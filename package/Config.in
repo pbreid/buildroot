@@ -1963,6 +1963,7 @@ menu "Multimedia"
 	source "package/mediastreamer/Config.in"
 	source "package/x264/Config.in"
 	source "package/x265/Config.in"
+	source "package/libpisp/Config.in"
 endmenu
 
 menu "Networking"

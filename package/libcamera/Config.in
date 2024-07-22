@@ -62,6 +62,17 @@ config BR2_PACKAGE_LIBCAMERA_PIPELINE_RPI_VC4
 	help
 	  Pipeline for Raspberry Pi devices.
 
+config BR2_PACKAGE_LIBCAMERA_PIPELINE_RPI_PISP
+        bool "rpi/pisp pipeline"
+        depends on BR2_arm || BR2_aarch64
+        depends on BR2_USE_WCHAR # boost (already enforced for gnutls)
+        select BR2_PACKAGE_BOOST
+        select BR2_PACKAGE_LIBCAMERA_HAS_PIPELINE
+        help
+          Pipeline for Raspberry Pi devices.
+
+
+
 config BR2_PACKAGE_LIBCAMERA_PIPELINE_SIMPLE
 	bool "simple pipeline"
 	select BR2_PACKAGE_LIBCAMERA_HAS_PIPELINE

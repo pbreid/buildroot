@@ -4,8 +4,8 @@
 #
 ################################################################################
 
-LIBCAMERA_SITE = https://git.linuxtv.org/libcamera.git
-LIBCAMERA_VERSION = v0.3.0
+LIBCAMERA_SITE = https://github.com/raspberrypi/libcamera
+LIBCAMERA_VERSION = v0.3.0+rpt20240617
 LIBCAMERA_SITE_METHOD = git
 LIBCAMERA_DEPENDENCIES = \
 	host-openssl \
@@ -49,6 +49,11 @@ ifeq ($(BR2_PACKAGE_LIBCAMERA_V4L2),y)
 LIBCAMERA_CONF_OPTS += -Dv4l2=true
 else
 LIBCAMERA_CONF_OPTS += -Dv4l2=false
+endif
+
+ifeq ($(BR2_PACKAGE_LIBCAMERA_PIPELINE_RPI_PISP),y)
+LIBCAMERA_PIPELINES-y += rpi/pisp
+LIBCAMERA_DEPENDENCIES += boost                                                   endif  
 endif
 
 LIBCAMERA_PIPELINES-$(BR2_PACKAGE_LIBCAMERA_PIPELINE_IMX8_ISI) += imx8-isi
@@ -136,5 +141,7 @@ define LIBCAMERA_BUILD_STRIP_IPA_SO
 endef
 
 LIBCAMERA_POST_BUILD_HOOKS += LIBCAMERA_BUILD_STRIP_IPA_SO
+
+LIBCAMERA_RPI_CONF_OPTS += -Dc_args=-Wno-error=array-bounds
 
 $(eval $(meson-package))
