@@ -44,6 +44,9 @@ UTIL_LINUX_CONF_OPTS += \
 	--disable-rpath \
 	--disable-makeinstall-chown
 
+UTIL_LINUX_CONF_OPTS += --enable-findmnt
+
+
 UTIL_LINUX_LINK_LIBS = $(TARGET_NLS_LIBS)
 
 HOST_UTIL_LINUX_DEPENDENCIES = host-pkgconf
